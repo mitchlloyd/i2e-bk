@@ -1,9 +1,9 @@
 <div class="album-list">
   {{#each model as |album|}}
     <div class="album">
-      <a href="/album/1">
+      {{#link-to 'album' album}}
         <img src="{{album.artwork}}">
-      </a>
+      {{/link-to}}
       <p class="album-name">{{album.name}}</p>
       <p class="album-artist">{{album.artist}}</p>
       <p class="song-count">
