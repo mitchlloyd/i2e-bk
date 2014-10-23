@@ -3,41 +3,16 @@
 </header>
 
 <div class="album-list">
-  <div class="album">
-    <a href="/album/1">
-      <img src="images/the-morning-after.jpg">
-    </a>
-    <p class="album-name">The Morning After</p>
-    <p class="album-artist">GOLDHOUSE</p>
-    <p class="song-count">8 songs</p>
-  </div>
-
-  <div class="album">
-    <a href="/album/1">
-      <img src="images/the-morning-after.jpg">
-    </a>
-    <p class="album-name">The Morning After</p>
-    <p class="album-artist">GOLDHOUSE</p>
-    <p class="song-count">8 songs</p>
-  </div>
-
-  <div class="album">
-    <a href="/album/1">
-      <img src="images/the-morning-after.jpg">
-    </a>
-    <p class="album-name">The Morning After</p>
-    <p class="album-artist">GOLDHOUSE</p>
-    <p class="song-count">8 songs</p>
-  </div>
-
-  <div class="album">
-    <a href="/album/1">
-      <img src="images/the-morning-after.jpg">
-    </a>
-    <p class="album-name">The Morning After</p>
-    <p class="album-artist">GOLDHOUSE</p>
-    <p class="song-count">8 songs</p>
-  </div>
+  {{#each model as |album|}}
+    <div class="album">
+      <a href="/album/1">
+        <img src="{{album.artwork}}">
+      </a>
+      <p class="album-name">{{album.name}}</p>
+      <p class="album-artist">{{album.artist}}</p>
+      <p class="song-count">8 songs</p>
+    </div>
+  {{/each}}
 </div>
 
 <footer class="now-playing">
