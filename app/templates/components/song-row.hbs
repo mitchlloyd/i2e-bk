@@ -1,0 +1,14 @@
+<tr>
+  <td class="song-track">
+    <span class="track-number">{{attrs.song.track}}</span>
+    <span>
+      {{#if isPlaying}}
+        <span {{action 'pause'}} class="play">❙❙</span>
+      {{else}}
+        <span {{action 'play'}} class="play">▶</span>
+      {{/if}}
+    </span>
+  </td>
+  <td class="song-name">{{attrs.song.name}}</td>
+  <td class="song-duration">{{format-duration attrs.song.duration}}</td>
+</tr>
