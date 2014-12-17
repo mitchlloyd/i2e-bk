@@ -34,10 +34,22 @@ test("when a song is loaded and the player is not playing, the component shows t
   assert.equal(this.$('.now-playing-name').text().trim(), 'Song name', "The component shows the song name");
 });
 
+test("Toggling current and remaining time", function(assert) {
+  this.set('player', Ember.Service.create());
 
-test("Toggling current and remaining time", function(/* assert */) {
+  // Current bug with the resolver prevents using angle brackets
+  this.render(hbs`
+    {{now-playing player=player}}
+  `);
 
-  // TODO: IMPLEMENT THIS TEST
+  Ember.run(() => {
+    this.set('player.song', { duration: 120 });
+    this.set('player.currentTime', 30);
+  });
 
+  let durationElement = this.$('.duration');
+
+  assert.equal(durationElement.text().trim(), '0:30', "The component should show the current time");
+  durationElement.click();
+  assert.equal(durationElement.text().trim(), '1:30', "The component should show the remaining time");
 });
-
